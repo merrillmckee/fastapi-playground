@@ -28,9 +28,9 @@ async def demo_pausing():
 async def demo_concurrency():
     start = time.perf_counter()
 
-    task_2 = asyncio.create_task(call_io_bound('Get IO data', 200, delay=2))
-    task_3 = asyncio.create_task(call_io_bound('Get IO data', 300, delay=3))
-    task_1 = asyncio.create_task(call_io_bound('Get IO data', 100, delay=1))
+    task_2 = asyncio.create_task(call_io_bound('Get IO data 2', 200, delay=2))
+    task_3 = asyncio.create_task(call_io_bound('Get IO data 3', 300, delay=3))
+    task_1 = asyncio.create_task(call_io_bound('Get IO data 1', 100, delay=1))
 
     io_value = await task_2
     print(io_value)
